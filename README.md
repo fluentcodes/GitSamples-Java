@@ -1,6 +1,6 @@
 ## [GitSamples](../../tree/master): Java Design Pattern
 
-### Topics
+### Topic Packages
 * [SOLID](test/samples/solid)
   * [Single Responsility](test/samples/solid/singleresponsibility)
   * [Open Closed](test/samples/solid/openclosed)
@@ -12,6 +12,8 @@
   * [Visitor](test/samples/behavioral/visitor)
 * [Creational Pattern](test/samples/creational)
   * [Builder](test/samples/creational/builder)
+  * [Factory](test/samples/creational/factory)
+  * [Singelton](test/samples/creational/singleton)
 * [Structural Pattern](test/samples/structural)
   * [Adapter](test/samples/structural/adapter) 
   * [Bridge](test/samples/structural/bridge)
