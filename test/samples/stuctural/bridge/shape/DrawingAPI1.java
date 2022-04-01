@@ -1,4 +1,4 @@
-package samples.behavioral.bridge.shape;
+package samples.stuctural.bridge.shape;
 
 /**
  * "ConcreteImplementor"  1/2

@@ -1,4 +1,4 @@
-package samples.behavioral.bridge.accountbalance;
+package samples.stuctural.bridge.accountbalance;
 @FunctionalInterface
 public interface Feedback {
   void log(String message);

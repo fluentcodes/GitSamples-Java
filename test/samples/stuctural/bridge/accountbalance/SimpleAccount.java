@@ -1,4 +1,4 @@
-package samples.behavioral.bridge.accountbalance;
+package samples.stuctural.bridge.accountbalance;
 
 public class SimpleAccount extends AbstractAccount {
   private int balance;
