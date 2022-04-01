@@ -1,4 +1,4 @@
-package samples.stuctural.facade;
+package samples.stuctural.adapter;
 
 public class Menu1{
 

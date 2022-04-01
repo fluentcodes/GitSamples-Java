@@ -17,7 +17,7 @@ The facade pattern is typically used when
 * the abstractions and implementations of a subsystem are tightly coupled.
 
 ### Examples
-In the example we define a [MenueFacade](MenuFacade.java) with the methods
+In the example we define a [MenueFacade](MenuAdapter.java) with the methods
 * showMenu1: For [Menu1](Menu1.java)
 * showMenu2: For [Menu2](Menu2.java)
 * showMenu2: For [Menu3](Menu3.java)

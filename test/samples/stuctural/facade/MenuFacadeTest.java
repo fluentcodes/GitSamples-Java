@@ -8,5 +8,6 @@ public class MenuFacadeTest {
     new MenuFacade().showMenue1();
     new MenuFacade().showMenue2();
     new MenuFacade().showMenue3();
+    new MenuFacade().showMenue4();
   }
 }
