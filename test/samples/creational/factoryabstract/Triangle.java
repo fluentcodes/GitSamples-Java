@@ -1,15 +1,17 @@
-package samples.solid.singleresponsibility.forms;
+package samples.creational.factoryabstract;
 
-public class Square implements Forms {
-  public static final String NAME = "SQUARE";
+import samples.solid.singleresponsibility.forms.Forms;
+
+public class Triangle implements Forms {
+  public static final String NAME = "TRIANGLE";
   private double length;
-  public Square(double length) {
+  public Triangle(double length) {
     this.length = length;
   }
 
   @Override
   public double area() {
-    return length * length;
+    return length * length / 2;
   }
 
   @Override

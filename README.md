@@ -11,6 +11,7 @@
   * [Chain of Responsibility](test/samples/behavioral/chainofresponsibility)
   * [Visitor](test/samples/behavioral/visitor)
 * [Creational Pattern](test/samples/creational)
+  * [Abstract Factory](test/samples/creational/factoryabstract)
   * [Builder](test/samples/creational/builder)
   * [Factory](test/samples/creational/factory)
   * [Singelton](test/samples/creational/singleton)
