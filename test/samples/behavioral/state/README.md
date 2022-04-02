@@ -24,3 +24,4 @@ An example for a state machine you find under
 * https://en.wikipedia.org/wiki/State_pattern
 * https://en.wikipedia.org/wiki/Behavioral_pattern
 * https://en.wikipedia.org/wiki/Object-oriented_programming
+* https://www.baeldung.com/java-state-design-pattern

@@ -13,7 +13,7 @@ state class in the following order:
 * [ReceivedState](ReceivedState.java)
 
 ### Tests
-In the [StateTest](StateTest.java) there is a simple 
+In the [StateTest](StateTest.java) there is a simple
 chain:
 
     Package pkg = new Package();
@@ -26,4 +26,4 @@ chain:
     assertEquals(ReceivedState.class, pkg.getState().getClass());
 
 ### Links
-* https://www.baeldung.com/java-observer-pattern
+* https://www.baeldung.com/java-state-design-pattern

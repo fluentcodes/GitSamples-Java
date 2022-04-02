@@ -10,6 +10,7 @@
 * [Behavioral Pattern](test/samples/behavioral)
   * [Chain of Responsibility](test/samples/behavioral/chainofresponsibility)
   * [Command](test/samples/behavioral/command)
+  * [Interpreter](test/samples/behavioral/interpreter)
   * [Mediator](test/samples/behavioral/mediator)
   * [Observer](test/samples/behavioral/observer)
   * [State](test/samples/behavioral/state)
