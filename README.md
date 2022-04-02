@@ -9,6 +9,8 @@
   * [Debendency Inversion](test/samples/solid/dependencyinversion)
 * [Behavioral Pattern](test/samples/behavioral)
   * [Chain of Responsibility](test/samples/behavioral/chainofresponsibility)
+  * [Mediator](test/samples/behavioral/mediator)
+  * [Template Method Pattern](test/samples/behavioral/template)
   * [Visitor](test/samples/behavioral/visitor)
 * [Creational Pattern](test/samples/creational)
   * [Abstract Factory](test/samples/creational/factoryabstract)

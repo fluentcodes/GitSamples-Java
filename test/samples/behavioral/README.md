@@ -1,6 +1,7 @@
 ## [GitSamples](/../../tree/master) - [Java Design Pattern](/../../tree/java-design-pattern): Behavioral Pattern
 
 * [Chain of Responsibility Pattern] (chainofresponsibility)
+* [Mediator Pattern] (mediator)
 * [Template Method Pattern] (template)
 * [Visitor Pattern] (visitor)
 
