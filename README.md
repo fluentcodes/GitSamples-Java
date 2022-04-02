@@ -11,6 +11,7 @@
   * [Chain of Responsibility](test/samples/behavioral/chainofresponsibility)
   * [Command](test/samples/behavioral/command)
   * [Mediator](test/samples/behavioral/mediator)
+  * [Observer](test/samples/behavioral/observer)
   * [Template Method Pattern](test/samples/behavioral/template)
   * [Visitor](test/samples/behavioral/visitor)
 * [Creational Pattern](test/samples/creational)

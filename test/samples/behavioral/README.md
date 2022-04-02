@@ -3,6 +3,7 @@
 * [Chain of Responsibility Pattern](chainofresponsibility)
 * [Command Pattern](command)
 * [Mediator Pattern](mediator)
+* [Observer Pattern](observer)
 * [Template Method Pattern](template)
 * [Visitor Pattern](visitor)
 
