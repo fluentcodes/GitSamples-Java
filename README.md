@@ -22,6 +22,7 @@
   * [Composite](test/samples/structural/composite)
   * [Decorator](test/samples/structural/decorator)
   * [Facade](test/samples/structural/facade)
+  * [Proxy](test/samples/structural/proxy)
 
 ### Links
 * https://de.wikipedia.org/wiki/Prinzipien_objektorientierten_Designs#SOLID-Prinzipien
