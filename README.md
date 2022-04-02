@@ -14,6 +14,7 @@
   * [Abstract Factory](test/samples/creational/factoryabstract)
   * [Builder](test/samples/creational/builder)
   * [Factory](test/samples/creational/factory)
+  * [Prototype](test/samples/creational/prototype)
   * [Singelton](test/samples/creational/singleton)
 * [Structural Pattern](test/samples/structural)
   * [Adapter](test/samples/structural/adapter) 

@@ -4,6 +4,7 @@
 * [Abstract Factory Pattern] (factoryabstract)
 * [Builder Pattern] (builder)
 * [Factory Pattern] (factory)
+* [Prototype Pattern] (prototype)
 * [Singelton Pattern] (singelton)
 
 ### Links
