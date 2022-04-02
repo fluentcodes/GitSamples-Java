@@ -1,6 +1,6 @@
 ## [GitSamples](/../../tree/master) - [Command Pattern](/../../tree/java-design-pattern/test/samples/behavioural/observer): PropertyChangeListener Example
 
-This example example use the PropertyChangeListener.
+This example use the PropertyChangeListener.
 
 This example uses the java PropertyChangeListener by
 * [Agency](Agency.java): Subject

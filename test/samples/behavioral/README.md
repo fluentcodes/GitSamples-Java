@@ -4,6 +4,7 @@
 * [Command Pattern](command)
 * [Mediator Pattern](mediator)
 * [Observer Pattern](observer)
+* [State Pattern](state)
 * [Template Method Pattern](template)
 * [Visitor Pattern](visitor)
 

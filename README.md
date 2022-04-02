@@ -12,6 +12,7 @@
   * [Command](test/samples/behavioral/command)
   * [Mediator](test/samples/behavioral/mediator)
   * [Observer](test/samples/behavioral/observer)
+  * [State](test/samples/behavioral/state)
   * [Template Method Pattern](test/samples/behavioral/template)
   * [Visitor](test/samples/behavioral/visitor)
 * [Creational Pattern](test/samples/creational)
