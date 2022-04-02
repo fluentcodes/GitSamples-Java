@@ -9,6 +9,7 @@
   * [Debendency Inversion](test/samples/solid/dependencyinversion)
 * [Behavioral Pattern](test/samples/behavioral)
   * [Chain of Responsibility](test/samples/behavioral/chainofresponsibility)
+  * [Command](test/samples/behavioral/command)
   * [Mediator](test/samples/behavioral/mediator)
   * [Template Method Pattern](test/samples/behavioral/template)
   * [Visitor](test/samples/behavioral/visitor)
