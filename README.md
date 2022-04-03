@@ -11,6 +11,7 @@
   * [Chain of Responsibility](test/samples/behavioral/chainofresponsibility)
   * [Command](test/samples/behavioral/command)
   * [Interpreter](test/samples/behavioral/interpreter)
+  * [Iterator](test/samples/behavioral/iterator)
   * [Mediator](test/samples/behavioral/mediator)
   * [Mememento](test/samples/behavioral/mememento)
   * [Observer](test/samples/behavioral/observer)

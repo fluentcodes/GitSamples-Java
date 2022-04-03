@@ -2,6 +2,8 @@
 
 * [Chain of Responsibility Pattern](chainofresponsibility)
 * [Command Pattern](command)
+* [Interpretor Pattern](interpreter)
+* [Iterator Pattern](iterator)
 * [Mediator Pattern](mediator)
 * [Mememento Pattern](memento)
 * [Observer Pattern](observer)
