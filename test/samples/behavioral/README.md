@@ -5,6 +5,7 @@
 * [Mediator Pattern](mediator)
 * [Observer Pattern](observer)
 * [State Pattern](state)
+* [Strategy Pattern](strategy)
 * [Template Method Pattern](template)
 * [Visitor Pattern](visitor)
 
