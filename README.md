@@ -12,6 +12,7 @@
   * [Command](test/samples/behavioral/command)
   * [Interpreter](test/samples/behavioral/interpreter)
   * [Mediator](test/samples/behavioral/mediator)
+  * [Mememento](test/samples/behavioral/mememento)
   * [Observer](test/samples/behavioral/observer)
   * [State](test/samples/behavioral/state)
   * [Strategy](test/samples/behavioral/strategy)
