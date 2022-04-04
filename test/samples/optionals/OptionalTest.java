@@ -1,9 +1,19 @@
 package samples.optionals;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
+import samples.optionals.flatMap.Inner;
+import samples.optionals.flatMap.Nested;
+import samples.optionals.flatMap.Outer;
 
 public class OptionalTest {
     private final String someValue = "Some string";
@@ -13,55 +23,136 @@ public class OptionalTest {
     private final Optional<String> emptyOptional = Optional.ofNullable(nullValue);
 //    private final Optional<String> emptyOptional = Optional.empty();
 
+    @Test
+    public void getInteger() {
+        Integer value = Integer.valueOf(2);
+        Optional<Integer> optional = Optional.of(value);
+        assertTrue(optional.isPresent());
+        assertEquals(value, optional.get());
+    }
+
+    @Test
+    public void getString() {
+        Optional<String> optional = Optional.of("hello");
+        assertTrue(optional.isPresent());
+        assertEquals(Optional.of("hello"), optional);
+        assertEquals("hello", optional.get());
+    }
+
+    @Test
+    public void ifPresentConsumer() {
+        Optional<String> optional = Optional.of("hello");
+        Consumer<String> consumer = string -> System.out.println("Consumed: " + string);
+        optional.ifPresent(consumer); // print out "Consumed: hello"
+    }
+
+    @Test
+    public void orElseSupplierHello() {
+        Optional<String> optional = Optional.of("hello");
+        Supplier<String> supplier = () -> "From supplier";
+        assertEquals("hello", optional.orElseGet(supplier));
+    }
+
+    @Test
+    public void orElseSupplierEmpty() {
+        Optional<String> optional = Optional.empty();
+        Supplier<String> supplier = () -> "From supplier";
+        assertEquals("From supplier", optional.orElseGet(supplier));
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void empty() {
+        Optional<String> optional = Optional.empty();
+        assertFalse(optional.isPresent());
+        optional.get();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void ofNullableInteger() {
+        Optional<Integer> optionalNull = Optional.ofNullable(null);
+        assertFalse(optionalNull.isPresent());
+        assertNull(optionalNull.get()); //(Integer)optionalNull.get();
+    }
+
+    @Test
+    public void orElseIntegerNull() {
+        Optional<Integer> optionalNull = Optional.ofNullable(null);
+        assertFalse(optionalNull.isPresent());
+        assertEquals(Integer.valueOf(0), optionalNull.orElse(new Integer(0))); //(Integer)optionalNull.get();
+    }
+
+    @Test
+    public void orElseInteger() {
+        Optional<Integer> optional = Optional.of(new Integer(2));
+        assertTrue(optional.isPresent());
+        assertEquals(Integer.valueOf(2), optional
+            .orElse(new Integer(0)));
+    }
+
+    @Test
+    public void orElseString() throws Exception {
+        Assert.assertEquals("value", Optional.of("value")
+            .orElse("not set"));
+    }
+
+    @Test
+    public void orElseStringEmpty() throws Exception {
+        Assert.assertEquals("not set", Optional.empty()
+            .orElse("not set"));
+    }
+
+    @Test
+    public void orElseGetStringLamda() throws Exception {
+        Assert.assertEquals("value", Optional.of("value")
+            .orElseGet(this::slowCalculation));
+    }
+
+    @Test
+    public void orElseGetEmtyLamda() throws Exception {
+        Assert.assertEquals("calculated 1", Optional.empty()
+            .orElseGet(this::slowCalculation));
+    }
+
+    private int counter = 0;
+    private String slowCalculation() {
+        return "calculated " + (++counter);
+    }
+
+    @Test
+    public void orElseThrowString() throws Exception {
+        Assert.assertEquals("value", Optional.of("value")
+            .orElseThrow(IllegalStateException::new));
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void orElseThrowNull() throws Exception {
+        Optional.empty()
+            .orElseThrow(IllegalStateException::new);
+    }
+
     @Test(expected = NullPointerException.class)
-    public void testUnsafeCreation() throws Exception {
-        final Optional<String> unsafe = Optional.of(nullValue);
+    public void ofNullNullPointerException() throws Exception {
+        final Optional<String> unsafe = Optional.of(null);
     }
 
     @Test
-    public void testToString() throws Exception {
-        System.out.println("stringOptional is: " + stringOptional);
-        System.out.println("emptyOptional is: " + emptyOptional);
+    public void isPresentString() throws Exception {
+        Assert.assertTrue(Optional.of("value").isPresent());
     }
 
     @Test
-    public void testPresenceCheck() throws Exception {
-        Assert.assertTrue(stringOptional.isPresent());
-        Assert.assertFalse(emptyOptional.isPresent());
+    public void isPresentNull() throws Exception {
+        Assert.assertFalse(Optional.empty().isPresent());
     }
 
     @Test
-    public void testIfPresent() throws Exception {
-        stringOptional.ifPresent(System.out::println);
-        emptyOptional.ifPresent(System.out::println);
+    public void ifPresentString() throws Exception {
+        Optional.of("value").ifPresent(System.out::println);
     }
 
     @Test
-    public void testGet() throws Exception {
-        Assert.assertEquals(someValue, stringOptional.get());
-        try {
-            emptyOptional.get();
-            Assert.fail("Should have thrown");
-        } catch (final Exception e) {
-            Assert.assertTrue(e instanceof NoSuchElementException);
-        }
-    }
-
-    @Test
-    public void testSafeGet() throws Exception {
-        Assert.assertEquals(someValue, stringOptional.orElse("not set"));
-        Assert.assertEquals("not set", emptyOptional.orElse("not set"));
-
-        Assert.assertEquals(someValue, stringOptional.orElseGet(this::slowCalculation));
-        Assert.assertEquals("calculated 1", emptyOptional.orElseGet(this::slowCalculation));
-
-        Assert.assertEquals(someValue, stringOptional.orElseThrow(IllegalStateException::new));
-        try {
-            emptyOptional.orElseThrow(IllegalStateException::new);
-            Assert.fail("Should have thrown");
-        } catch (final Exception e) {
-            Assert.assertTrue(e instanceof IllegalStateException);
-        }
+    public void ifPresentNull() throws Exception {
+        Optional.empty().ifPresent(System.out::println);
     }
 
     private final String[] inputs =
@@ -71,8 +162,8 @@ public class OptionalTest {
             "hello optional",
             "world wide nepp"
         };
-    @Test
-    public void testMapListPatternOldStyle() throws Exception {
+
+    private Map<String, List<String>> transformNonOptional() {
         final Map<String, List<String>> tokens = new HashMap<>();
 
         for (final String input : inputs) {
@@ -85,44 +176,66 @@ public class OptionalTest {
                 contexts.add(input);
             }
         }
-
-        final List<String> helloContexts = tokens.get("hello");
-        Assert.assertEquals(2, helloContexts != null ? helloContexts.size() : 0);
-
-        Assert.assertEquals(3, tokens.containsKey("world") ? tokens.get("world").size() : 0);
+        return tokens;
     }
 
     @Test
-    public void testMapListPatternOptional() throws Exception {
+    public void inputTransformNonOptional() throws Exception {
+        final Map<String, List<String>> tokens = transformNonOptional();
+
+        final List<String> helloContexts = tokens.get("hello");
+        Assert.assertEquals(2, helloContexts != null ? helloContexts.size() : 0);
+        Assert.assertEquals(3, tokens.containsKey("world") ? tokens.get("world").size() : 0);
+    }
+
+    private Map<String, List<String>> transformOptional() {
         final Map<String, List<String>> tokens = new HashMap<>();
 
         for (final String input : inputs) {
             for (final String token : input.split(" ")) {
-
-                Optional.ofNullable(tokens.get(token)).orElseGet(() -> {
-                    final List<String> list = new ArrayList<>();
-                    tokens.put(token, list);
-                    return list;
-                }).add(input);
+                Optional
+                    .ofNullable(tokens.get(token))
+                    .orElseGet(() -> {
+                        final List<String> list = new ArrayList<>();
+                        tokens.put(token, list);
+                        return list;
+                    })
+                    .add(input);
             }
         }
+        return tokens;
+    }
 
-        Assert.assertEquals(2, Optional.ofNullable(tokens.get("hello")).orElseGet(Collections::emptyList).size());
-        Assert.assertEquals(3, Optional.ofNullable(tokens.get("world")).orElseGet(Collections::emptyList).size());
+    @Test
+    public void inputTransformOptional() throws Exception {
+        final Map<String, List<String>> tokens = transformOptional();
+
+        Assert.assertEquals(2, Optional.
+            ofNullable(tokens.get("hello"))
+            .orElseGet(Collections::emptyList)
+            .size());
+        Assert.assertEquals(3, Optional
+            .ofNullable(tokens.get("world"))
+            .orElseGet(Collections::emptyList)
+            .size());
     }
 
 
     @Test
-    public void testMapListPatternForEachAndOptional() throws Exception {
+    public void inputTransformOptionalAndForeach() throws Exception {
         final Map<String, List<String>> tokens = new HashMap<>();
 
-        Arrays.asList(inputs).forEach(input ->
-                Arrays.asList(input.split(" ")).forEach(token ->
-                        Optional.ofNullable(tokens.get(token)).orElseGet(() -> {
-                            final List<String> list = new ArrayList<>();
-                            tokens.put(token, list);
-                            return list;
-                        }).add(input)
+        Arrays.asList(inputs)
+            .forEach(input ->
+                Arrays.asList(input.split(" "))
+                    .forEach(token ->
+                        Optional
+                            .ofNullable(tokens.get(token))
+                            .orElseGet(() -> {
+                                final List<String> list = new ArrayList<>();
+                                tokens.put(token, list);
+                                return list;
+                            }).add(input)
                 )
         );
 
@@ -130,15 +243,8 @@ public class OptionalTest {
         Assert.assertEquals(3, Optional.ofNullable(tokens.get("world")).orElseGet(Collections::emptyList).size());
     }
 
-
-    private int counter = 0;
-    private String slowCalculation() {
-        return "calculated " + (++counter);
-    }
-
-
     @Test
-    public void testFilter() throws Exception {
+    public void filterString() throws Exception {
         final Optional<String> anotherOptional = Optional.of("more stuff");
 
         stringOptional.filter(s -> s.startsWith("Some")).ifPresent(System.out::println);
@@ -147,102 +253,83 @@ public class OptionalTest {
     }
 
     @Test
-    public void testMap() throws Exception {
-        Assert.assertEquals(someValue.length(), stringOptional.map(String::length).orElse(0).longValue());
-        Assert.assertEquals(0, emptyOptional.map(String::length).orElse(0).longValue());
+    public void filterStringFound() throws Exception {
+        Optional.of("Some stuff")
+            .filter(s -> s.startsWith("Some"))
+            .ifPresent(System.out::println);
     }
 
     @Test
-    public void testFlatMap() throws Exception {
-        final Computer powerMachine = new Computer(new SoundCard(new USB()));
-        final Computer businessPc = new Computer(new SoundCard(null));
-        final Computer notEvenSound = new Computer(null);
-        final Computer lostInSpace = null;
-
-        Assert.assertEquals(USB.version, soundUsbVersion(powerMachine));
-        Assert.assertEquals("nope", soundUsbVersion(businessPc));
-        Assert.assertEquals("nope", soundUsbVersion(notEvenSound));
-        Assert.assertEquals("nope", soundUsbVersion(lostInSpace));
+    public void filterStringNotFound() throws Exception {
+        Optional.of("value")
+            .filter(s -> s.startsWith("Some"))
+            .ifPresent(System.out::println);
     }
 
     @Test
-    public void testOptionalPrimitive() throws Exception {
-        final OptionalInt maybeInt = OptionalInt.of(4711);
-        final OptionalInt emptyInt = OptionalInt.empty();
-
-        Assert.assertEquals(4711, maybeInt.orElse(-1));
-        Assert.assertEquals(-1, emptyInt.orElse(-1));
-
-        System.out.println("OptionalInt.orElse()");
-        System.out.println(maybeInt.orElse(-2));
-        System.out.println(emptyInt.orElse(-2));
-
-        System.out.println("OptionalInt.ifPresent()");
-        maybeInt.ifPresent(System.out::println);
-        emptyInt.ifPresent(System.out::println);
+    public void filterNull() throws Exception {
+        Optional.empty()
+            .filter(s -> ((String)s).startsWith("Some"))
+            .ifPresent(System.out::println);
     }
 
-
-    private String soundUsbVersion(final Computer computer) {
-        return Optional.ofNullable(computer)
-            .flatMap(Computer::getSoundCard)
-            .flatMap(SoundCard::safeGetUsb)
-            .map(USB::getVersion)
-            .orElse("nope");
+    @Test
+    public void mapOrElseStringLength() throws Exception {
+        Assert.assertEquals(5,
+            Optional.of("value")
+            .map(String::length)
+            .orElse(0).longValue());
     }
 
-//    private String notCompilable_soundUsbVersion(final Computer computer) {
-//        return Optional.ofNullable(computer)
-//                .map(Computer::getSoundCard)
-//                .map(SoundCard::safeGetUsb)
-//                .map(USB::getVersion)
-//                .orElse("nope");
-//    }
+    @Test
+    public void mapOrElseNullLength() throws Exception {
+        Assert.assertEquals(0,
+            Optional.empty()
+            .map(s->((String)s).length())
+            .orElse(0).longValue());
+    }
 
-    private String soundUsbVersionWithMap(final Computer computer) {
-        return Optional.ofNullable(computer)
-            .map(Computer::getSoundCard)
+    @Test
+    public void mapOrElseStringQueued() {
+        Optional<Outer> optional = Optional.of(new Outer("value"));
+        assertEquals("value", optional
+            .map(Outer::getOptional)
             .orElse(Optional.empty())
-            .map(SoundCard::safeGetUsb)
+            .map(Nested::getOptional)
             .orElse(Optional.empty())
-            .map(USB::getVersion)
-            .orElse("nope");
+            .map(Inner::getFoo)
+            .orElse("foo"));
     }
 
-    private static class Computer {
-        private final Optional<SoundCard> soundCard;    // not recommended
-
-        private Computer(final SoundCard soundCard) {
-            this.soundCard = Optional.ofNullable(soundCard);
-        }
-        public Optional<SoundCard> getSoundCard() {
-            return soundCard;
-        }
-        public SoundCard unsafeGetSoundCard() {
-            return soundCard.orElse(null);
-        }
+    @Test
+    public void mapOrElseEmptyQueued() {
+        Optional<Outer> optional = Optional.of(new Outer());
+        assertEquals("foo", optional
+            .map(Outer::getOptional)
+            .orElse(Optional.empty())
+            .map(Nested::getOptional)
+            .orElse(Optional.empty())
+            .map(Inner::getFoo)
+            .orElse("foo"));
     }
 
-    private static class SoundCard {
-        private final USB usb;
-
-        private SoundCard(final USB usb) {
-            this.usb = usb;
-        }
-        public USB getUsb() {
-            return usb;
-        }
-        public Optional<USB> safeGetUsb() {
-            return Optional.ofNullable(usb);
-        }
+    @Test
+    public void mapOrElseEmptyQueued2() {
+        Optional<Outer> optional = Optional.of(new Outer());
+        assertEquals("foo", optional
+            .map(Outer::getNested)
+            .map(Nested::getInner)
+            .map(Inner::getFoo)
+            .orElse("foo"));
     }
 
-    private static class USB {
-        public static String version = "2.0";
-
-        public String getVersion() {
-            return version;
-        }
+    @Test
+    public void mapOrElseStringQueued2() {
+        Optional<Outer> optional = Optional.of(new Outer("value"));
+        assertEquals("value", optional
+            .map(Outer::getNested)
+            .map(Nested::getInner)
+            .map(Inner::getFoo)
+            .orElse("foo"));
     }
-
 }

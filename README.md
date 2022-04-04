@@ -3,6 +3,7 @@
 ### Topic Packages
 * [streams](test/samples/utilStream)
   * [numbers](test/samples/utilStream/numbers) 
+* [optionals](test/samples/optionals)
 
 ### Links
 * https://mkyong.com/tutorials/java-8-tutorials/
