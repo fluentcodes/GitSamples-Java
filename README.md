@@ -1,8 +1,8 @@
 ## [GitSamples](../../tree/master): Topic Branch Java 8
 
 ### Topic Packages
-* [streams](test/samples/utilStream)
-  * [numbers](test/samples/utilStream/numbers) 
+* [streams](test/samples/stream)
+  * [numbers](test/samples/stream/numbers) 
 * [optionals](test/samples/optionals)
 
 ### Links
