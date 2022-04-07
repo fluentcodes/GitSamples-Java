@@ -1,5 +1,5 @@
 package samples.function.constructor_ref;
 
-public interface RefClassEmpty<T> {
+public interface ReferenceEmpty<T> {
   T create();
 }

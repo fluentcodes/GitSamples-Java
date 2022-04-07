@@ -6,6 +6,9 @@
 * [optionals](test/samples/optionals)
 
 ### Links
+* https://philvarner.github.io/pages/modern-java.html
+* https://programming.guide/java/lambda-cheat-sheet.html
+* https://lemus.webs.upv.es/wordpress/wp-content/uploads/2018/02/cheat-sheets.pdf
 * https://mkyong.com/tutorials/java-8-tutorials/
 * https://www.tutorialspoint.com/java8/index.htm
 * https://howtodoinjava.com/java-8-tutorial/

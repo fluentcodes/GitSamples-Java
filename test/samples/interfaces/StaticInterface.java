@@ -1,7 +1,7 @@
-package samples.interfaces.iface;
+package samples.interfaces;
 
 public interface StaticInterface {
-    public static void callStatic(int i){
+    static void callStatic(int i){
         System.out.println("StaticInterface.callStatic(): Wert = "+i);
     }
 }

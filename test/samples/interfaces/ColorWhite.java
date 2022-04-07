@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package samples.interfaces.iface;
+package samples.interfaces;
 
 /**
  *
  * @author joecool
  */
-public interface Black {
+public interface ColorWhite {
     default void writeColor(){
-        System.out.println("Default is black");
+        System.out.println("Default is white");
     };
 }

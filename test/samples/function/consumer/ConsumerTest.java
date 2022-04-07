@@ -2,11 +2,8 @@ package samples.function.consumer;
 
 import static samples.function.ComparatorTest.ROLES;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.function.Consumer;
 import org.junit.Test;
-import samples.function.constructor_ref.RefClass;
 
 /**
  * @author Charles Ohene

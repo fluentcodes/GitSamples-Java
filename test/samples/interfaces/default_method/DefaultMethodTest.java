@@ -1,4 +1,6 @@
-package samples.interfaces;
+package samples.interfaces.default_method;
+
+import org.junit.Test;
 
 /**
  * Created by Werner on 16.07.2016.
@@ -9,45 +11,12 @@ package samples.interfaces;
  * Thus, adding such method will simply break the collection framework implementations.
  * Java 8 introduces default method so that List/Collection interface can have a default implementation of forEach method, and the class implementing these interfaces need not implement the same.
  */
-public class DefaultMethodExperiments {
-    public static void main(String[] args) {
+public class DefaultMethodTest {
+    @Test
+    public void test() {
         System.out.println("Start Experiments with Default Method:");
-        new DefaultMethodExperiments().startCarExample();
+        Vehicle vehicle = new Car();
+        vehicle.iAm();
         System.out.println("Finished Experiments with Default Method.");
     }
-        public void startCarExample (){
-            Vehicle vehicle = new Car();
-            vehicle.iAm();
-        }
-
-
-    public class Car implements Vehicle, FourWheeler {
-        public void iAm(){
-            Vehicle.super.iAm();
-            FourWheeler.super.iAm();
-            Vehicle.blowHorn();
-            System.out.println("I am a car!");
-        }
-    }
-
-    interface Vehicle {
-        default void iAm(){
-            System.out.println("I am a vehicle!");
-        }
-
-        static void blowHorn(){
-            System.out.println("Blowing horn!!!");
-        }
-    }
-
-
-
-    interface FourWheeler {
-        default void iAm(){
-            System.out.println("I am a four wheeler!");
-        }
-    }
-
-
-
 }
