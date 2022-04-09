@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.stream;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.stream;
 
 import static org.junit.Assert.assertEquals;
 

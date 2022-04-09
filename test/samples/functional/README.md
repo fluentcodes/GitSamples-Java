@@ -1,6 +1,14 @@
 ## [GitSamples](/../../tree/master) - [Java8](/../../tree/java-8): Functional
 
 ### Topic Packages
+* [Consumer](consumer)
+* [BiConsumer](bi_consumer)
+* [BiFunction](bi_function)
+* [BinaryOperator](binary_operator)
+* [ConstructorRef](constructor_ref)
+* [FunctionalInterface](functional_interface)
+* [Predicate](predicate)
+* [Supplier](supplier)
 
 
 ### Links

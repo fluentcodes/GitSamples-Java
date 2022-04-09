@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.int_stream;
 
 import org.junit.Test;
 

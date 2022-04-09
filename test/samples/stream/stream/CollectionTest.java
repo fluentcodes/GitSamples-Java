@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.stream;
 
 import samples.utilFunction.logger.SimpleLogger;
 import samples.models.Person;

@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.stream;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.partitioningBy;

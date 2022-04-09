@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.long_stream;
 
 import org.junit.Ignore;
 import org.junit.Test;

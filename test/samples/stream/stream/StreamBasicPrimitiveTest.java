@@ -1,4 +1,4 @@
-package samples.stream;
+package samples.stream.stream;
 
 import samples.utilFunction.logger.TestBasics;
 import org.junit.Test;

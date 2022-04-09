@@ -1,9 +1,27 @@
 ## [GitSamples](../../tree/master): Topic Branch Java 8
 
 ### Topic Packages
-* [streams](test/samples/stream)
-  * [numbers](test/samples/stream/numbers) 
+* [Concurrency](test/samples/concurrent)
+  * [Callable](test/samples/concurrent/callable)
+  * [Future](test/samples/concurrent/future)
+* [Functional](test/samples/functional)
+  * [Consumer](test/samples/functional/consumer)
+  * [BiConsumer](test/samples/functional/bi_consumer)
+  * [BiFunction](test/samples/functional/bi_function)
+  * [BinaryOperator](test/samples/functional/binary_operator)
+  * [ConstructorRef](test/samples/functional/constructor_ref)
+  * [FunctionalInterface](test/samples/functional/functional_interface)
+  * [Predicate](test/samples/functional/predicate)
+  * [Supplier](test/samples/functional/supplier)
+* [Streams](test/samples/stream)
+  * [Stream](test/samples/stream/stream)
+  * [DoubleStream](test/samples/stream/double_stream)
+  * [IntStream](test/samples/stream/int_stream)
+  * [LongStream](test/samples/stream/long_stream)
+  * [numbers](test/samples/stream/numbers)
 * [optionals](test/samples/optionals)
+* [java/lang](test/samples/lang)
+  * [Runnable](test/samples/lang/runnable)
 
 ### Links
 * https://philvarner.github.io/pages/modern-java.html
