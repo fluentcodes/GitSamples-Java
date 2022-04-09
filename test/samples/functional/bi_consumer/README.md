@@ -1,4 +1,4 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/function): BiConsumer
+## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): BiConsumer
 <cite>Represents an operation that accepts two input arguments and returns no result. This is the two-arity specialization of Consumer. Unlike most other functional interfaces, BiConsumer is expected to operate via side-effects.</cite>
 
     @FunctionalInterface

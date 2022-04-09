@@ -1,4 +1,4 @@
-package samples.functional.runnable;
+package samples.lang.runnable;
 
 import java.util.stream.IntStream;
 

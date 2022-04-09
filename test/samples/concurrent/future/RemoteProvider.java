@@ -1,4 +1,4 @@
-package samples.concurrent;
+package samples.concurrent.future;
 
 import java.io.IOException;
 import java.io.InputStream;

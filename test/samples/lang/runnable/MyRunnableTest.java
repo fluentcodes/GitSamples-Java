@@ -1,8 +1,7 @@
-package samples.functional.runnable;
+package samples.lang.runnable;
 
 import org.junit.Test;
-
-import java.util.stream.IntStream;
+import samples.lang.runnable.MyRunnable;
 
 public class MyRunnableTest {
   @Test

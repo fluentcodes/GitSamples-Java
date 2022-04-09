@@ -1,4 +1,4 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/function): Consumer
+## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): Consumer
 <cite>Constructor Reference is used to refer to a constructor without instantiating the named class.</cite>
 
 ### Test Examples

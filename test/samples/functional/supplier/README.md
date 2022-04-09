@@ -1,4 +1,4 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/function): Supplier
+## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): Supplier
 <cite>Represents a supplier of results. </cite>
 
     @FunctionalInterface

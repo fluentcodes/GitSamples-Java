@@ -1,4 +1,4 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/function): BiFunction
+## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): BiFunction
 <cite>Represents a function that accepts two arguments and produces a result. This is the two-arity specialization of Function. </cite>
 
     @FunctionalInterface

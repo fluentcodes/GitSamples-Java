@@ -1,8 +1,13 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): Runnable
+## [GitSamples](/../../tree/master) - [Lang](/../../tree/java-8/test/samples/lang): Runnable
 <cite>The Runnable interface should be implemented by any class whose instances are intended to be executed by a thread. The class must define a method of no arguments called run. </cite>
 
+The Runnable interface is a functional interface and has a single run() method which doesn't accept any parameters and does not return any values.
+
+This is rather similar than [Callable]((/../../tree/java-8/test/samples/concurrent/callable).
+
+
 ### Examples
-* [MyRunnableTest](MyRunnableTest.java)
+* [MyRunnableTest](../../concurrent/callable/FactorialCalculatorTest.java)
 
 
 ### Links

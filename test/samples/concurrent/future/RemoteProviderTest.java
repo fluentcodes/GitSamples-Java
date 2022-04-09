@@ -1,7 +1,7 @@
-package samples.concurrent;
+package samples.concurrent.future;
 
 import static org.junit.Assert.assertNotNull;
-import static samples.concurrent.RemoteProvider.httpGet;
+import static samples.concurrent.future.RemoteProvider.httpGet;
 
 import org.junit.Test;
 

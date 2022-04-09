@@ -1,4 +1,4 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/function): Consumer
+## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): Consumer
 <cite>Java Consumer is a functional interface which represents an operation that accepts a single input argument and returns no result. </cite>
 
 ### Test Examples

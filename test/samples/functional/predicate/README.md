@@ -1,4 +1,4 @@
-## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/function): Consumer
+## [GitSamples](/../../tree/master) - [Functional Programming](/../../tree/java-8/test/samples/functional): Consumer
 <cite>Predicate is a functional interface, which accepts an argument and returns a boolean. </cite>
 
 The use case is in filtering streams. 
