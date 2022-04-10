@@ -33,7 +33,7 @@ public class ToDoubleFunctionTest {
   }
 
   @Test
-  public void string() {
+  public void apply() {
     ToDoubleFunction<String> strLength = s -> s.length();    // lambda expression
     assertEquals(10.0, strLength.applyAsDouble("GitSamples"), 0.1);
   }

@@ -109,16 +109,6 @@ public class StreamBasicsTest {
     );
   }
 
-  @Test
-  public void testFoldLeft() throws Exception {
-    logger.log(testCollection.stream().reduce("-", (s, i) -> s + i));
-  }
-
-  @Test
-  public void testFoldRight() throws Exception {
-    logger.log(testCollection.stream().reduce("-", (s, i) -> i + s));
-  }
-
   /**
    * The following experiments examine the lazyness of intermediate operations
    */

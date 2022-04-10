@@ -1,5 +1,6 @@
 package samples.stream.double_stream;
 
+import java.util.Arrays;
 import org.junit.Test;
 
 import java.util.List;
@@ -11,6 +12,18 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class DoubleStreamTest {
+
+  @Test
+  public void printDoubleStreamOf() {
+    DoubleStream stream = DoubleStream.of(0.1,2.2,13.3);
+    stream.forEach(print::log);
+  }
+
+  @Test
+  public void printDouble() {
+    Arrays.stream(new double[]{0.1,2.2,13.3})
+        .forEach(print::log);
+  }
 
   DoubleStream create() {
     return DoubleStream

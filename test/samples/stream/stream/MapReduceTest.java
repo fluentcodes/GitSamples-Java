@@ -46,22 +46,6 @@ public class MapReduceTest {
         Assert.assertEquals(expectedCount, count);
     }
 
-    @Test
-    public void test2MapReduceCount() throws Exception {
-        final int count = logTimes("mapReduceCount", () ->
-                lines.stream().mapToInt((String::length)).reduce(0, (i1, i2) -> i1 + i2)
-        );
-        Assert.assertEquals(expectedCount, count);
-    }
-
-    @Test
-    public void test3ParallelCount() throws Exception {
-        final int count = logTimes("parallelCount", () ->
-                lines.parallelStream().mapToInt((String::length)).reduce(0, (i1, i2) -> i1 + i2)
-        );
-        Assert.assertEquals(expectedCount, count);
-    }
-
     private int logTimes(final String testName, final IntSupplier counter) {
         final long start = System.currentTimeMillis();
         final int result = counter.getAsInt();

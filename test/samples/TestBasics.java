@@ -1,4 +1,7 @@
-package samples.utilFunction.logger;
+package samples;
+
+import samples.utilFunction.logger.ObjectLogger;
+import samples.utilFunction.logger.SimpleLogger;
 
 /**
  * Created by werner/ecube on 08.08.16.
@@ -6,9 +9,6 @@ package samples.utilFunction.logger;
  * Topics are the possibilities creating streams and the different intermediate operation mapToObject, mapToInt, mapToDouble and
  */
 public class TestBasics {
-
-
-    public ObjectLogger print = x->{System.out.println(x + " " + x.getClass().getName());};
-    public SimpleLogger info  = System.out::println;
-
+    public static ObjectLogger print = x->{System.out.println(x + " " + x.getClass().getName());};
+    public static SimpleLogger info  = System.out::println;
 }

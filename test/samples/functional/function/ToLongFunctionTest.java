@@ -3,15 +3,10 @@ package samples.functional.function;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.function.ToDoubleFunction;
 import java.util.function.ToLongFunction;
-import java.util.stream.Collectors;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
-import static samples.stream.stream.MatchTest.NAMES;
 
 public class ToLongFunctionTest {
 

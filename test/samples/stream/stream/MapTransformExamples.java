@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import samples.utilFunction.logger.TestBasics;
+import samples.TestBasics;
 
 /**
  * Created by werner/ecube on 09.08.16.

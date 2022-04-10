@@ -1,5 +1,6 @@
 package samples.stream.long_stream;
 
+import java.util.Arrays;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -10,8 +11,21 @@ import java.util.stream.LongStream;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static samples.TestBasics.print;
 
 public class LongStreamTest {
+
+  @Test
+  public void printLongStreamOf() {
+    LongStream stream = LongStream.of(0L,2L,13L);
+    stream.forEach(print::log);
+  }
+
+  @Test
+  public void printLong() {
+    Arrays.stream(new long[]{0L,2L,13L})
+        .forEach(print::log);
+  }
 
   @Test
   public void collect() {
