@@ -70,7 +70,7 @@
       double applyAsDouble(T t);
     }
 
-Directly transforms a IntStream to a DoubleStream:
+This function transforms an IntStream directly to a DoubleStream:
 
     final IntToDoubleFunction FUNCTION = i -> Double.valueOf(i)/3;
     IntStream intStream = Arrays.stream(new int[]{1, 2, 3});
@@ -91,10 +91,10 @@ Directly transforms a IntStream to a DoubleStream:
       double applyAsDouble(T t);
     }
 
-Directly transforms a LongStream to a DoubleStream:
+This function transforms an LongStream directly to a DoubleStream:
 
     final LongToDoubleFunction FUNCTION = i -> Double.valueOf(i) / 3;
-    LongStream longStream = Arrays.stream(new long[]{1L, 2L, 3L});
+    LongStream longStream = Arrays.stream(new range[]{1L, 3L});
     DoubleStream doubleStream = longStream.mapToDouble(FUNCTION::applyAsDouble);
 
 #### Examples
