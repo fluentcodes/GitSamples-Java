@@ -10,14 +10,17 @@
 * U – Type of the second argument to the function.
 * R – Type of the result of the function.
 
-Especially useful are BiConsumer for the new [foreach method in maps    ](MapForeachTest.java).
+Especially useful are BiConsumer for the new [foreach method in maps](MapForeachTest.java).
 
 ### Test Examples
 * [BiFunctionTest](BiFunctionTest): Simple Examples.
 * [MapComputeTest](MapComputeTest.java): Tests for Map.compute and Map.computeIfPresent methods.
 
 ### Links
+#### BiFunction
 * https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html
 * https://mkyong.com/java8/java-8-bifunction-examples/
 * https://www.baeldung.com/java-bifunction-interface
 * https://javabydeveloper.com/java-bifunction-guide-examples/
+
+####

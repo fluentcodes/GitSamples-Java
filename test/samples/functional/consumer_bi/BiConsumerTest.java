@@ -1,4 +1,4 @@
-package samples.functional.bi_consumer;
+package samples.functional.consumer_bi;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package samples.functional.bi_function;
+package samples.functional.function_bi;
 
 import org.junit.Before;
 import org.junit.Test;

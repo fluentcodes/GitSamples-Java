@@ -16,7 +16,7 @@ import org.junit.Test;
  * Copyright 2014 by Michael Inden 
  */
 public class MatchTest {
-    final static List<String> NAMES = Arrays.asList("Tim", "Tom", "Micha");
+    public final static List<String> NAMES = Arrays.asList("Tim", "Tom", "Micha");
     final static Predicate<String> START_WITH_T = str -> str.toUpperCase().startsWith("T");
     @Test
     public void allMatch() {
