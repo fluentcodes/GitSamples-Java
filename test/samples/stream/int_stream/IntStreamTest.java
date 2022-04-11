@@ -1,6 +1,8 @@
 package samples.stream.int_stream;
 
 import java.util.Arrays;
+import java.util.Random;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 import org.junit.Test;
 
@@ -129,5 +131,17 @@ public class IntStreamTest {
   public void reduceMult() {
     assertEquals(6, IntStream.range(1,3)
         .reduce(1, (a,b) -> a + b));
+  }
+
+  @Test
+  public void randomIntFromFloat() {
+    Random random = new Random();
+    final Supplier<Float> supplier = () -> random.nextFloat() * 100;
+    final Stream<Float> floatStream = Stream
+        .generate(supplier)
+        .limit(7);
+    final IntStream integerStream = floatStream
+        .mapToInt(val -> val.intValue());
+    integerStream.forEach(System.out::println);
   }
 }
